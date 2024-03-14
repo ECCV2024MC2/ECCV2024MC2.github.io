@@ -385,7 +385,7 @@ figure.zoom img {
   }
 
 #more-video {
-    width: 100%;
+    width: 80%;
     height: auto;  /* This will keep the video aspect ratio */
     margin: 0;
     border-radius: 0px;
