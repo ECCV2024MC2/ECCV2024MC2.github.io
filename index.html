@@ -220,6 +220,12 @@
     .venue {
         color: #1367a7;
     }
+
+    sup {
+        font-size: smaller; /* Adjust the font size to make it smaller */
+        vertical-align: top; /* Align the text with the top of the surrounding text */
+      }
+
 </style>
 
 <html>
@@ -480,6 +486,8 @@
 
                     While the synthesized views are plausible and seemingly satisfactory,
                     they often suffer from inaccurate correspondence modeling with ground-truth 3D scenes as shown in depth estimates.
+                    We perform the same metric depth estimation experiments as above with the existing video nerfs of 
+                    <a href="https://arxiv.org/abs/2011.12948">Nerfies</a> and <a href="https://arxiv.org/abs/2106.13228">HyperNeRF</a>.
                 </td>
             </tr>
         </table>
@@ -559,12 +567,12 @@
             <tr>
                 <td style="text-align:justify;">
 
-                    As shown in above figure, IBRNet typically assigns the highest weight to the last index in the
+                    As shown in above figure, <a href="https://arxiv.org/abs/2102.13090">IBRNet</a> typically assigns the highest weight to the last index in the
                     sample along the ray.
                     This phenomenon occurs primarily
-                    when IBRNet struggles to identify correspondences between context features derived solely
+                    when <a href="https://arxiv.org/abs/2102.13090">IBRNet</a> struggles to identify correspondences between context features derived solely
                     from image encoders, especially in textureless regions (e.g., walls, flat surfaces).
-                    We conjecture that this happens because IBRNet's primary focus is on plausible view synthesis
+                    We conjecture that this happens because <a href="https://arxiv.org/abs/2102.13090">IBRNet</a>'s primary focus is on plausible view synthesis
                     rather than accurate depth estimation.
                     Such a bias manifests itself in the following ways: objects that are predicted to be farther
                     away and thus to have greater depth tend to show only small pixel shifts across different
