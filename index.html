@@ -257,7 +257,7 @@
     <br>
     <br>
     <center>
-        <span style="font-size:40px; color:#000;" width=1800px>
+        <span style="font-size:40px; color:#000;" width=1500px>
             <b>
                 MC<sup>2</sup>: Multi-view Consistent Depth Estimation via Coordinated Image-based Neural Rendering
             </b>
@@ -287,10 +287,10 @@
     <div class="docs-section" id="abstract">
 
 		<center>
-            <h1 class="navbar-heading"> <b>Abstract</b></h1>
+            <h1 class="navbar-heading"> <b>Overview</b></h1>
         </center>
 
-        <table align=center width=1350px>
+        <table align=center width=1500px>
             <tr>
                 <td style="text-align:justify;">
 					We are interested in achieving spatially accurate and temporally consistent depth estimates only from a stream of 2D RGB images.
@@ -323,10 +323,10 @@
         <center>
 
             <div class="video-comp-container">
-                <img id="overview" src="resources/1600x900_tmp.gif"  width="1600">
+                <img id="overview" src="resources/1600x900_tmp.gif"  width="1500">
             </div>
 
-            <table align=center width=1350px>
+            <table align=center width=1500px>
                 <tr>
                     <td style="text-align:justify;">
                         MC<sup>2</sup> synthesizes a depth map and corresponding RGB image at <em>arbitrary camera angles</em> using a stream of 2D RGB images as context features. 
@@ -357,7 +357,7 @@
             <h1 class="navbar-heading"> <b>Metric Depth Estimation for Mobile Phone Captures</b></h1>
         </center>
 
-        <table align=center width=1350px>
+        <table align=center width=1500px>
             <tr>
                 <td style="text-align:justify;">
 					Illustration of depth estimates with corresponding synthesized RGB images on mochi-high-five sequence on the iPhone dataset.
@@ -373,12 +373,55 @@
         <br><br>
 
         <center>
-            <div class="video-container">
-                <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
-                    src="resources/t23d.mp4">
-                    <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
-                </video>
+
+            <div class="video-container-iphone">
+                <div class="more-video">
+                    <div class="video-container-iphone">
+                        <video id="src-video" muted autoplay webkit-playsinline playsinline loop src="resources/mochi/source.mp4">
+                            <source src="resources/mochi/source.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption-video"><b>Source</b></p>
+                    </div>
+                </div>
+            
+                <div class="more-video">
+                    <div class="video-container-iphone">
+                        <video id="pred-video" muted autoplay webkit-playsinline playsinline loop src="resources/mochi/pred.mp4">
+                            <source src="resources/mochi/pred.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption-video"><b>MC<sup>2</sup> (Ours)</b></p>
+                    </div>
+                </div>
+            
+                <div class="more-video">
+                    <div class="video-container-iphone">
+                        <video id="lidar-video" muted autoplay webkit-playsinline playsinline loop src="resources/mochi/gt_mochi.mp4">
+                            <source src="resources/mochi/gt_mochi.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption-video"><b>iPhone Lidar Sensor</b></p>
+                    </div>
+                </div>
+            
+                <div class="more-video">
+                    <div class="video-container-iphone">
+                        <video id="zoe-video" muted autoplay webkit-playsinline playsinline loop src="resources/mochi/zoe_mochi.mp4">
+                            <source src="resources/mochi/zoe_mochi.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption-video"><b>ZoeDepth</b></p>
+                    </div>
+                </div>
+            
+                <div class="more-video">
+                    <div class="video-container-iphone">
+                        <video id="ours-video" muted autoplay webkit-playsinline playsinline loop src="resources/mochi/ours_mochi.mp4">
+                            <source src="resources/mochi/ours_mochi.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption-video"><b>MC<sup>2</sup> (Ours)</b></p>
+                    </div>
+                </div>
             </div>
+            
+        
         </center>
 
     </div>
@@ -391,7 +434,7 @@
             <h1 class="navbar-heading"> <b>Scaled Depth Estimation for SfM Reconstruction</b></h1>
         </center>
 
-        <table align=center width=1350px>
+        <table align=center width=1500px>
             <tr>
                 <td style="text-align:justify;">
                     Illustration of depth estimates and the corresponding synthesized RGB images. 
@@ -425,7 +468,7 @@
             <h1 class="navbar-heading"> <b>Plausible Novel Views Do Not Always Guarantee Accurate Depth Estimation</b></h1>
         </center>
 
-        <table align=center width=1350px>
+        <table align=center width=1500px>
             <tr>
                 <td style="text-align:justify;">
                     Neural scene renderings have shown great potential in parameterizing complex 3D scenes as a neural network 
@@ -454,39 +497,100 @@
         <hr>
         <br>
 
-        <table align=center width=1350px>
-            <tr>
-                <td style="text-align:justify;">
 
-                    Moreover, we find that existing image-based neural rendering approaches can easily prioritize 
-                    the simpler task of blending colors using features obtained from contextual views 
-                    over the more complex task of establishing correspondence between sampled contextual features along rays in 3D space.
-                    This occurs because image-based neural rendering operated in 2D-pixel space often lacks a comprehensive understanding of the 3D scene, 
-                    leading to a preference for color blending over accurate correspondence matching of 3D points, 
-                    where depth estimates aligned with camera poses suggest that inferred geometry could be interpreted as correspondence matching points. 
-                    This challenge is compounded when the model relies solely on RGB images, 
-                    as RGB matching can occur even when each projected pixel location in the context views represents different objects, in the absence of geometric priors.
-                
-                </td>
-            </tr>
-        </table>
+
+        <center>
+            <h1>Inaccurately Inferred Geomtry due to the Failure of Correpondence Matching</h1>
+
+            <br>
+
+            <table align=center width=1500px>
+                <tr>
+                    <td style="text-align:justify;">
+    
+                        Moreover, we find that existing image-based neural rendering approaches can easily prioritize 
+                        the simpler task of blending colors using features obtained from contextual views 
+                        over the more complex task of establishing correspondence between sampled contextual features along rays in 3D space.
+                        This occurs because image-based neural rendering operated in 2D-pixel space often lacks a comprehensive understanding of the 3D scene, 
+                        leading to a preference for color blending over accurate correspondence matching of 3D points, 
+                        where depth estimates aligned with camera poses suggest that inferred geometry could be interpreted as correspondence matching points. 
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <div class="video-comp-container">
+                <img id="overview" src="resources/ibrnet.png"  width="1000">
+            </div>
+        </center>
 
         <br><br>
 
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+
+                    As shown in above figure, IBRNet typically assigns the highest weight to the last index in the sample along the ray. 
+                    This phenomenon occurs primarily 
+                    when IBRNet struggles to identify correspondences between context features derived solely 
+                    from image encoders, especially in textureless regions (e.g., walls, flat surfaces).
+                    We conjecture that this happens because IBRNet's primary focus is on plausible view synthesis 
+                    rather than accurate depth estimation. 
+                    Such a bias manifests itself in the following ways: objects that are predicted to be farther away and thus to have greater depth tend to show only small pixel shifts across different viewpoints, even with significant changes in camera perspective; on the other hand, objects that are perceived to be closer show pronounced pixel movement within the images, even with minimal changes in camera angle. Thus, when optimizing image-based neural rendering networks for color image synthesis, there is a strong bias toward synthesizing images in which the relative motion of objects matches their expected real-world behavior. 
+                    This prioritizes visual realism at the expense of accurate depth estimation, 
+                    especially in the absence of explicit geometric modeling such as image-based view synthesis.
+
+
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        <hr>
+        <br>
+        
         <center>
-            <div class="video-container">
-                <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
-                    src="resources/t23d.mp4">
-                    <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
-                </video>
+            <h1>Accurately Inferred Geomtry with MC<sup>2</sup></h1>
+
+            <br>
+            <div class="video-comp-container">
+                <img id="overview" src="resources/ours.png"  width="1000">
             </div>
         </center>
+        
 
     </div>
 
     <br><br>
     <!-- <hr> -->
 	<br><br>
+
+
+    <script>
+        // Select all video elements
+        const videos = document.querySelectorAll('.video-container-iphone video');
+    
+        // Array to hold boolean values for each video's readiness
+        let canPlay = new Array(videos.length).fill(false);
+    
+        // Function to check all videos' readiness and play them if all are ready
+        function checkAndPlayAll() {
+            if (canPlay.every(status => status)) { // Check if all videos are ready
+                videos.forEach(video => {
+                    video.play();
+                });
+            }
+        }
+    
+        // Assign event listeners to each video
+        videos.forEach((video, index) => {
+            video.addEventListener('canplaythrough', () => {
+                canPlay[index] = true; // Update readiness status
+                checkAndPlayAll(); // Check if all videos are ready and play them
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
