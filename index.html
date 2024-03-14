@@ -289,7 +289,7 @@
     <div class="docs-section" id="abstract">
 
         <center>
-            <h1 class="navbar-heading"> <b>Overview</b></h1>
+            <h1 class="navbar-heading"> <b>Abstract</b></h1>
         </center>
 
         <table align=center width=1500px>
@@ -324,7 +324,13 @@
         </table>
 
         <br>
-        <hr>
+        <br>
+        <br>
+
+
+        <center>
+            <h1 class="navbar-heading"> <b>Overview</b></h1>
+        </center>
 
         <center>
 
@@ -389,7 +395,7 @@
 
             <div class="video-container-iphone">
                 <div class="more-video">
-                    <div class="video-container-iphone">
+                    <div class="video-inner">
                         <video id="src" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
                             src="resources/mochi/source.mp4">
                             <source id="src" src="resources/mochi/source.mp4" type="video/mp4">
@@ -399,7 +405,7 @@
                 </div>
 
                 <div class="more-video">
-                    <div class="video-container-iphone">
+                    <div class="video-inner">
                         <video id="pred" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
                             src="resources/mochi/pred.mp4">
                             <source id="pred" src="resources/mochi/pred.mp4" type="video/mp4">
@@ -409,7 +415,7 @@
                 </div>
 
                 <div class="more-video">
-                    <div class="video-container-iphone">
+                    <div class="video-inner">
                         <video id="lidar" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline=""
                             loop="" src="resources/mochi/gt_mochi.mp4">
                             <source id="lidar" src="resources/mochi/gt_mochi.mp4" type="video/mp4">
@@ -419,7 +425,7 @@
                 </div>
 
                 <div class="more-video">
-                    <div class="video-container-iphone">
+                    <div class="video-inner">
                         <video id="zoe" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
                             src="resources/mochi/zoe_mochi.mp4">
                             <source id="zoe" src="resources/mochi/zoe_mochi.mp4" type="video/mp4">
@@ -429,7 +435,7 @@
                 </div>
 
                 <div class="more-video">
-                    <div class="video-container-iphone">
+                    <div class="video-inner">
                         <video id="ours" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
                             src="resources/mochi/ours_mochi.mp4">
                             <source id="ours" src="resources/mochi/ours_mochi.mp4" type="video/mp4">
@@ -439,207 +445,209 @@
                 </div>
 
             </div>
+        
+        </center>
+    </div>
 
+
+    <br><br>
+
+    <div class="docs-section" id="sde">
+
+        <center>
+            <h1 class="navbar-heading"> <b>Scaled Depth Estimation for SfM Reconstruction</b></h1>
+        </center>
+
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+                    Illustration of depth estimates and the corresponding synthesized RGB images.
+                    MC<sup>2</sup>renders a spatially accurate depth map while capturing thin structures,
+                    e.g., wire and radiator (upper) and chair legs (bottom),
+                    which is often missing even with Ground Truth obtained with lidar sensors.
+                    In addition, MC<sup>2</sup> synthesizes deblurred color images for a target view
+                    by aggregating features from context views.
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <center>
+            <div class="video-container">
+                <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                    src="resources/t23d.mp4">
+                    <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
+                </video>
+            </div>
+        </center>
+
+    </div>
+
+    <br><br>
+
+    <div class="docs-section" id="motivation">
+
+        <center>
+            <h1 class="navbar-heading"> <b>Plausible Novel Views Do Not Always Guarantee Accurate Depth
+                    Estimation</b></h1>
+        </center>
+
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+                    Neural scene renderings have shown great potential in parameterizing complex 3D scenes as a
+                    neural network
+                    by mapping 5D coordinates to RGB values and densities using 1) NeRF or 2) image-based view
+                    synthesis.
+
+                    <br><br>
+
+                    While the synthesized views are plausible at unseen views and seemingly satisfactory,
+                    they often suffer from inaccurate correspondence modeling with ground-truth 3D scenes.
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <center>
+
+            <div class="video-container-iphone">
+
+                <div class="more-video">
+                    <div class="video-inner">
+                        <video id="nerfies_d" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline=""
+                            loop="" src="resources/mochi/nerfies_d.mp4">
+                            <source id="nerfies_d" src="resources/mochi/nerfies_d.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption-video"><b>Nerfies</b></p>
+                    </div>
+                </div>
+
+
+                <div class="more-video">
+                    <div class="video-inner">
+                        <video id="hypernerf_d" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline=""
+                            loop="" src="resources/mochi/hypernerf_d.mp4">
+                            <source id="hypernerf_d" src="resources/mochi/hypernerf_d.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption-video"><b>HyperNeRF</b></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </center>
+
+        <br>
+        <hr>
+        <br>
+
+
+
+        <center>
+            <h1>Inaccurately Inferred Geomtry due to the Failure of Correpondence Matching</h1>
+
+            <br>
+
+            <table align=center width=1500px>
+                <tr>
+                    <td style="text-align:justify;">
+
+                        Moreover, we find that existing image-based neural rendering approaches can easily
+                        prioritize
+                        the simpler task of blending colors using features obtained from contextual views
+                        over the more complex task of establishing correspondence between sampled contextual
+                        features along rays in 3D space.
+                        This occurs because image-based neural rendering operated in 2D-pixel space often lacks a
+                        comprehensive understanding of the 3D scene,
+                        leading to a preference for color blending over accurate correspondence matching of 3D
+                        points,
+                        where depth estimates aligned with camera poses suggest that inferred geometry could be
+                        interpreted as correspondence matching points.
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <div class="video-comp-container">
+                <img id="overview" src="resources/ibrnet.png" width="1000">
+            </div>
         </center>
 
         <br><br>
 
-        <div class="docs-section" id="sde">
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
 
-            <center>
-                <h1 class="navbar-heading"> <b>Scaled Depth Estimation for SfM Reconstruction</b></h1>
-            </center>
-
-            <table align=center width=1500px>
-                <tr>
-                    <td style="text-align:justify;">
-                        Illustration of depth estimates and the corresponding synthesized RGB images.
-                        MC<sup>2</sup>renders a spatially accurate depth map while capturing thin structures,
-                        e.g., wire and radiator (upper) and chair legs (bottom),
-                        which is often missing even with Ground Truth obtained with lidar sensors.
-                        In addition, MC<sup>2</sup> synthesizes deblurred color images for a target view
-                        by aggregating features from context views.
-                    </td>
-                </tr>
-            </table>
-
-            <br><br>
-
-            <center>
-                <div class="video-container">
-                    <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline=""
-                        loop="" src="resources/t23d.mp4">
-                        <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </center>
-
-        </div>
-
-        <br><br>
-
-        <div class="docs-section" id="motivation">
-
-            <center>
-                <h1 class="navbar-heading"> <b>Plausible Novel Views Do Not Always Guarantee Accurate Depth
-                        Estimation</b></h1>
-            </center>
-
-            <table align=center width=1500px>
-                <tr>
-                    <td style="text-align:justify;">
-                        Neural scene renderings have shown great potential in parameterizing complex 3D scenes as a
-                        neural network
-                        by mapping 5D coordinates to RGB values and densities using 1) NeRF or 2) image-based view
-                        synthesis.
-
-                        <br><br>
-
-                        While the synthesized views are plausible at unseen views and seemingly satisfactory,
-                        they often suffer from inaccurate correspondence modeling with ground-truth 3D scenes.
-                    </td>
-                </tr>
-            </table>
-
-            <br><br>
-
-            <center>
-
-                <div class="video-container-iphone">
-
-                    <div class="more-video">
-                        <div class="video-container-iphone">
-                            <video id="nerfies_d" autobuffer="" muted="" autoplay="" webkit-playsinline=""
-                                playsinline="" loop="" src="resources/mochi/nerfies_d.mp4">
-                                <source id="nerfies_d" src="resources/mochi/nerfies_d.mp4" type="video/mp4">
-                            </video>
-                            <p class="caption-video"><b>Nerfies</b></p>
-                        </div>
-                    </div>
+                    As shown in above figure, IBRNet typically assigns the highest weight to the last index in the
+                    sample along the ray.
+                    This phenomenon occurs primarily
+                    when IBRNet struggles to identify correspondences between context features derived solely
+                    from image encoders, especially in textureless regions (e.g., walls, flat surfaces).
+                    We conjecture that this happens because IBRNet's primary focus is on plausible view synthesis
+                    rather than accurate depth estimation.
+                    Such a bias manifests itself in the following ways: objects that are predicted to be farther
+                    away and thus to have greater depth tend to show only small pixel shifts across different
+                    viewpoints, even with significant changes in camera perspective; on the other hand, objects that
+                    are perceived to be closer show pronounced pixel movement within the images, even with minimal
+                    changes in camera angle. Thus, when optimizing image-based neural rendering networks for color
+                    image synthesis, there is a strong bias toward synthesizing images in which the relative motion
+                    of objects matches their expected real-world behavior.
+                    This prioritizes visual realism at the expense of accurate depth estimation,
+                    especially in the absence of explicit geometric modeling such as image-based view synthesis.
 
 
-                    <div class="more-video">
-                        <div class="video-container-iphone">
-                            <video id="hypernerf_d" autobuffer="" muted="" autoplay="" webkit-playsinline=""
-                                playsinline="" loop="" src="resources/mochi/hypernerf_d.mp4">
-                                <source id="hypernerf_d" src="resources/mochi/hypernerf_d.mp4" type="video/mp4">
-                            </video>
-                            <p class="caption-video"><b>HyperNeRF</b></p>
-                        </div>
-                    </div>
+                </td>
+            </tr>
+        </table>
 
-                </div>
+        <br>
+        <hr>
+        <br>
 
-            </center>
+        <center>
+            <h1>Accurately Inferred Geomtry with MC<sup>2</sup></h1>
 
             <br>
-            <hr>
-            <br>
+            <div class="video-comp-container">
+                <img id="overview" src="resources/ours.png" width="1000">
+            </div>
+        </center>
 
 
+    </div>
 
-            <center>
-                <h1>Inaccurately Inferred Geomtry due to the Failure of Correpondence Matching</h1>
+    <br><br>
+    <!-- <hr> -->
+    <br><br>
 
-                <br>
+    <script>
+        // Select all video elements
+        const videos = document.querySelectorAll('.video-container-iphone video');
 
-                <table align=center width=1500px>
-                    <tr>
-                        <td style="text-align:justify;">
+        // Array to hold boolean values for each video's readiness
+        let canPlay = new Array(videos.length).fill(false);
 
-                            Moreover, we find that existing image-based neural rendering approaches can easily
-                            prioritize
-                            the simpler task of blending colors using features obtained from contextual views
-                            over the more complex task of establishing correspondence between sampled contextual
-                            features along rays in 3D space.
-                            This occurs because image-based neural rendering operated in 2D-pixel space often lacks a
-                            comprehensive understanding of the 3D scene,
-                            leading to a preference for color blending over accurate correspondence matching of 3D
-                            points,
-                            where depth estimates aligned with camera poses suggest that inferred geometry could be
-                            interpreted as correspondence matching points.
-                        </td>
-                    </tr>
-                </table>
-                <br>
-
-                <div class="video-comp-container">
-                    <img id="overview" src="resources/ibrnet.png" width="1000">
-                </div>
-            </center>
-
-            <br><br>
-
-            <table align=center width=1500px>
-                <tr>
-                    <td style="text-align:justify;">
-
-                        As shown in above figure, IBRNet typically assigns the highest weight to the last index in the
-                        sample along the ray.
-                        This phenomenon occurs primarily
-                        when IBRNet struggles to identify correspondences between context features derived solely
-                        from image encoders, especially in textureless regions (e.g., walls, flat surfaces).
-                        We conjecture that this happens because IBRNet's primary focus is on plausible view synthesis
-                        rather than accurate depth estimation.
-                        Such a bias manifests itself in the following ways: objects that are predicted to be farther
-                        away and thus to have greater depth tend to show only small pixel shifts across different
-                        viewpoints, even with significant changes in camera perspective; on the other hand, objects that
-                        are perceived to be closer show pronounced pixel movement within the images, even with minimal
-                        changes in camera angle. Thus, when optimizing image-based neural rendering networks for color
-                        image synthesis, there is a strong bias toward synthesizing images in which the relative motion
-                        of objects matches their expected real-world behavior.
-                        This prioritizes visual realism at the expense of accurate depth estimation,
-                        especially in the absence of explicit geometric modeling such as image-based view synthesis.
-
-
-                    </td>
-                </tr>
-            </table>
-
-            <br>
-            <hr>
-            <br>
-
-            <center>
-                <h1>Accurately Inferred Geomtry with MC<sup>2</sup></h1>
-
-                <br>
-                <div class="video-comp-container">
-                    <img id="overview" src="resources/ours.png" width="1000">
-                </div>
-            </center>
-
-
-        </div>
-
-        <br><br>
-        <!-- <hr> -->
-        <br><br>
-
-        <script>
-            // Select all video elements
-            const videos = document.querySelectorAll('.video-container-iphone video');
-
-            // Array to hold boolean values for each video's readiness
-            let canPlay = new Array(videos.length).fill(false);
-
-            // Function to check all videos' readiness and play them if all are ready
-            function checkAndPlayAll() {
-                if (canPlay.every(status => status)) { // Check if all videos are ready
-                    videos.forEach(video => {
-                        video.play();
-                    });
-                }
-            }
-
-            // Assign event listeners to each video
-            videos.forEach((video, index) => {
-                video.addEventListener('canplaythrough', () => {
-                    canPlay[index] = true; // Update readiness status
-                    checkAndPlayAll(); // Check if all videos are ready and play them
+        // Function to check all videos' readiness and play them if all are ready
+        function checkAndPlayAll() {
+            if (canPlay.every(status => status)) { // Check if all videos are ready
+                videos.forEach(video => {
+                    video.play();
                 });
+            }
+        }
+
+        // Assign event listeners to each video
+        videos.forEach((video, index) => {
+            video.addEventListener('canplaythrough', () => {
+                canPlay[index] = true; // Update readiness status
+                checkAndPlayAll(); // Check if all videos are ready and play them
             });
-        </script>
+        });
+    </script>
 
 </body>
 
