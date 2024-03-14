@@ -452,8 +452,8 @@ figure.zoom img {
 .video-person-container-smaller {
     display: flex;
     flex-direction: row;
-    width: 80%;
-    overflow-x: auto;
+    /* width: 80%; */
+    /* overflow-x: auto; */
     justify-content: center;
 }
 
@@ -504,7 +504,10 @@ figure.zoom img {
 }
 
 .video-caption-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
 }
   
 .caption-person {
