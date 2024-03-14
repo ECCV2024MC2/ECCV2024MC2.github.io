@@ -452,7 +452,7 @@ figure.zoom img {
 .video-person-container-smaller {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 90%;
     overflow-x: auto;
     justify-content: center;
 }
@@ -513,6 +513,10 @@ figure.zoom img {
     align-items: flex-end; /* Align items to the bottom */
     text-align: center; /* Center text horizontally */
     margin: 0 10px; /* Adjust margin as needed */
+}
+
+.captionn {
+    margin: 10px 0 0; /* Adjust margin between videos and caption */
 }
 
 .caption-person {
