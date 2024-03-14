@@ -497,6 +497,11 @@ figure.zoom img {
     text-align: center;
     border-radius: 40px;
 }
+
+.person-video-smaller video {
+    max-width: 100%; /* Set a maximum width to ensure the video fits within its container */
+    height: auto; /* Allow the height to adjust proportionally based on the width */
+}
   
 .caption-person {
     position: absolute;
