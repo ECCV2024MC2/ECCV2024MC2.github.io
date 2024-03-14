@@ -400,21 +400,15 @@ figure.zoom img {
     align-items: center;
 }
 
+
+
 .video-container-iphone {
-    display: flex; /* This makes all child elements (.more-video) align horizontally */
-    justify-content: space-between; /* This spaces the child elements evenly */
-    align-items: center; /* This vertically centers the child elements */
-    width: 80%;
-    margin: 0 auto; /* Center the container */
-}
-
-.more-video {
-    flex: 1; /* This makes each .more-video element take up equal space */
-}
-
-.video-inner {
     position: relative;
-    /* width: 100%; You can adjust this as needed */
+    width: 90%;
+    margin: 0 auto;  /* centering the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
