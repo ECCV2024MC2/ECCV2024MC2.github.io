@@ -452,7 +452,7 @@ figure.zoom img {
 .video-person-container-smaller {
     display: flex;
     flex-direction: row;
-    width: 95%;
+    width: 80%;
     overflow-x: auto;
     justify-content: center;
 }
