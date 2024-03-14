@@ -30,11 +30,10 @@ body {
     grid-gap: 1px;
 }
 
-/* 
+
 .video-container {
     position: relative;
-} */
-
+}
 
 .video-teaser-container {
     width: 80%;
@@ -400,17 +399,12 @@ figure.zoom img {
     align-items: center;
 }
 
-
-
-.video-container-iphone {
-    position: relative;
-    width: 90%;
-    margin: 0 auto;  /* centering the container */
+.video-mochi-container {
+    width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 
 .caption-video {
     position: absolute;
@@ -420,6 +414,82 @@ figure.zoom img {
     background: rgba(72, 72, 72, 0.7);
     color: rgb(255, 251, 251);
     width: 75%;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+#mochi-video {
+    width: 70%;
+    height: auto;
+}
+
+.caption-mochi {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(72, 72, 72, 0.7);
+    color: rgb(255, 251, 251);
+    width: 40%;
+    padding: 1px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+
+.video-person-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.person-video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#person-video {
+    height: 100%;
+    width: auto;
+}
+
+#person-video1 {
+    height: 100%;
+    width: auto;
+}
+
+#person-video2 {
+    height: 100%;
+    width: auto;
+}
+
+#person-video3 {
+    height: 100%;
+    width: auto;
+}
+
+#person-video4 {
+    height: 100%;
+    width: auto;
+}
+
+.caption-person {
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(72, 72, 72, 0.7);
+    color: rgb(255, 251, 251);
+    width: 80%;
     padding: 2px;
     box-sizing: border-box;
     font-size: 0.8em;
@@ -505,6 +575,8 @@ figure.zoom img {
     height: 100%;
     object-fit: contain; 
 }
+
+
 
 /* .displayedImage {
     position: absolute;
