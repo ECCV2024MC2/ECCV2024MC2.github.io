@@ -438,6 +438,8 @@
                     </div>
                 </div>
 
+            </div>
+
         </center>
 
         <br><br>
@@ -507,25 +509,27 @@
 
                     <div class="more-video">
                         <div class="video-inner">
-                            <video id="nerfies_d" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
-                                src="resources/mochi/nerfies_d.mp4">
+                            <video id="nerfies_d" autobuffer="" muted="" autoplay="" webkit-playsinline=""
+                                playsinline="" loop="" src="resources/mochi/nerfies_d.mp4">
                                 <source id="nerfies_d" src="resources/mochi/nerfies_d.mp4" type="video/mp4">
                             </video>
                             <p class="caption-video"><b>Nerfies</b></p>
                         </div>
                     </div>
 
-    
+
                     <div class="more-video">
                         <div class="video-inner">
-                            <video id="hypernerf_d" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
-                                src="resources/mochi/hypernerf_d.mp4">
+                            <video id="hypernerf_d" autobuffer="" muted="" autoplay="" webkit-playsinline=""
+                                playsinline="" loop="" src="resources/mochi/hypernerf_d.mp4">
                                 <source id="hypernerf_d" src="resources/mochi/hypernerf_d.mp4" type="video/mp4">
                             </video>
                             <p class="caption-video"><b>HyperNeRF</b></p>
                         </div>
                     </div>
-    
+
+                </div>
+
             </center>
 
             <br>
@@ -612,30 +616,30 @@
         <!-- <hr> -->
         <br><br>
 
-    <script>
-        // Select all video elements
-        const videos = document.querySelectorAll('.video-container-iphone video');
-    
-        // Array to hold boolean values for each video's readiness
-        let canPlay = new Array(videos.length).fill(false);
-    
-        // Function to check all videos' readiness and play them if all are ready
-        function checkAndPlayAll() {
-            if (canPlay.every(status => status)) { // Check if all videos are ready
-                videos.forEach(video => {
-                    video.play();
-                });
+        <script>
+            // Select all video elements
+            const videos = document.querySelectorAll('.video-container-iphone video');
+
+            // Array to hold boolean values for each video's readiness
+            let canPlay = new Array(videos.length).fill(false);
+
+            // Function to check all videos' readiness and play them if all are ready
+            function checkAndPlayAll() {
+                if (canPlay.every(status => status)) { // Check if all videos are ready
+                    videos.forEach(video => {
+                        video.play();
+                    });
+                }
             }
-        }
-    
-        // Assign event listeners to each video
-        videos.forEach((video, index) => {
-            video.addEventListener('canplaythrough', () => {
-                canPlay[index] = true; // Update readiness status
-                checkAndPlayAll(); // Check if all videos are ready and play them
+
+            // Assign event listeners to each video
+            videos.forEach((video, index) => {
+                video.addEventListener('canplaythrough', () => {
+                    canPlay[index] = true; // Update readiness status
+                    checkAndPlayAll(); // Check if all videos are ready and play them
+                });
             });
-        });
-    </script> 
+        </script>
 
 </body>
 
