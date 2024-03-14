@@ -502,6 +502,10 @@ figure.zoom img {
     max-width: 100%; /* Set a maximum width to ensure the video fits within its container */
     height: auto; /* Allow the height to adjust proportionally based on the width */
 }
+
+.video-caption-container {
+    text-align: center;
+}
   
 .caption-person {
     position: absolute;
