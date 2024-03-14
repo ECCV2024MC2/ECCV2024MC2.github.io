@@ -509,11 +509,12 @@ figure.zoom img {
 
 .video-caption-container {
     display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    margin: 0 10px;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    text-align: center; /* Center text horizontally */
+    margin: 0 10px; /* Adjust margin as needed */
 }
-  
+
 .caption-person {
     position: absolute;
     top: 99%;
