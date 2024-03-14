@@ -404,7 +404,7 @@ figure.zoom img {
     display: flex; /* This makes all child elements (.more-video) align horizontally */
     justify-content: space-between; /* This spaces the child elements evenly */
     align-items: center; /* This vertically centers the child elements */
-    /* width: 80%; */
+    width: 80%;
     margin: 0 auto; /* Center the container */
 }
 
