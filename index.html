@@ -229,7 +229,7 @@
 
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title style="">MC<sup>2</sup>: Multi-view Consistent Depth Estimation via Coordinated Image-based Neural Rendering</title>
+    <title style="">MC2</sup>: Multi-view Consistent Depth Estimation via Coordinated Image-based Neural Rendering</title>
     <meta property="og:image" content="resources/overview.png" />
     <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
     <!-- <meta property="og:video" content="resources/video/teaser/teaser.mp4"> -->
@@ -316,50 +316,169 @@
                 </td>
             </tr>
         </table>
+
+            <br>
+            <hr>
+
+        <center>
+
+            <div class="video-comp-container">
+                <img id="overview" src="resources/1600x900_tmp.gif"  width="1600">
+            </div>
+
+            <table align=center width=1350px>
+                <tr>
+                    <td style="text-align:justify;">
+                        MC<sup>2</sup> synthesizes a depth map and corresponding RGB image at <em>arbitrary camera angles</em> using a stream of 2D RGB images as context features. 
+                        Such an accurate depth prediction is enabled by three main components. 
+                        First, MC<sup>2</sup> rescales each depth estimate of the context views obtained from the monocular depth estimation network to make them exist in the 3D world 
+                        in which the scene exists and ensure consistency between individually obtained estimates, 
+                        thus enabling geometric priors during feature matching in the next phase. 
+                        Then, these rescaled depth features with image features are fed into our three-way factorized transformers 
+                        that decompose the features along view, ray, and pixel to efficiently find the correspondence between the context features.
+                        Finally, MC<sup>2</sup> renders a depth map without explicit proxy geometry by taking into account the sequential nature of a ray. 
+                        By doing so, MC<sup>2</sup> successfully imagines spatially accurate and temporally consistent depth maps that respect the 3D world in which the given images reside.
+                    
+                    </td>
+                </tr>
+            </table>
+
+
+        </center>
+
     </div>
 
+    <br><br>
 
-    </center>
 
+    <div class="docs-section" id="mde">
 
-	<br>
-	<hr>
+		<center>
+            <h1 class="navbar-heading"> <b>Metric Depth Estimation for Mobile Phone Captures</b></h1>
+        </center>
 
-	<center>
-
-		<!-- <center>
-            <h1 class="navbar-heading"> <b>Overview of MC<sup>2</sup></b></h1>
-        </center> -->
-
-		<div class="video-comp-container">
-			<img id="overview" src="resources/1600x900_tmp.gif" alt="Descriptive text here"  width="1600">
-		</div>
-
-		<table align=center width=1350px>
+        <table align=center width=1350px>
             <tr>
                 <td style="text-align:justify;">
-					MC<sup>2</sup> synthesizes a depth map and corresponding RGB image at <em>arbitrary camera angles</em> using a stream of 2D RGB images as context features. 
-					Such an accurate depth prediction is enabled by three main components. 
-					First, MC<sup>2</sup> rescales each depth estimate of the context views obtained from the monocular depth estimation network to make them exist in the 3D world 
-					in which the scene exists and ensure consistency between individually obtained estimates, 
-					thus enabling geometric priors during feature matching in the next phase. 
-					Then, these rescaled depth features with image features are fed into our three-way factorized transformers 
-					that decompose the features along view, ray, and pixel to efficiently find the correspondence between the context features.
-					Finally, MC<sup>2</sup> renders a depth map without explicit proxy geometry by taking into account the sequential nature of a ray. 
-					By doing so, MC<sup>2</sup> successfully imagines spatially accurate and temporally consistent depth maps that respect the 3D world in which the given images reside.
-				
+					Illustration of depth estimates with corresponding synthesized RGB images on mochi-high-five sequence on the iPhone dataset.
+                    The color bar on the right is in meters (m). 
+                    MC<sup>2</sup> depth consistently over the video, 
+                    while accurately estimating metric depth. 
+                    ZoeDepth, on the other hand, overestimates depth,
+                    with its estimates fluctuating over time, as shown by the different colors.
                 </td>
             </tr>
         </table>
 
+        <br><br>
 
-	</center>
+        <div class="video-container">
+            <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                src="resources/t23d.mp4">
+                <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
 
 	<br><br>
-	<hr>
-	<br><br>
 
-    <br>
+    <div class="docs-section" id="sde">
+
+		<center>
+            <h1 class="navbar-heading"> <b>Scaled Depth Estimation for SfM Reconstruction</b></h1>
+        </center>
+
+        <table align=center width=1350px>
+            <tr>
+                <td style="text-align:justify;">
+                    Illustration of depth estimates and the corresponding synthesized RGB images. 
+                    MC<sup>2</sup>renders a spatially accurate depth map while capturing thin structures, 
+                    e.g., wire and radiator (upper) and chair legs (bottom), 
+                    which is often missing even with Ground Truth obtained with lidar sensors. 
+                    In addition, MC<sup>2</sup> synthesizes deblurred color images for a target view 
+                    by aggregating features from context views.
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <div class="video-container">
+            <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                src="resources/t23d.mp4">
+                <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <div class="docs-section" id="motivation">
+
+		<center>
+            <h1 class="navbar-heading"> <b>Plausible Novel Views Do Not Always Guarantee Accurate Depth Estimation</b></h1>
+        </center>
+
+        <table align=center width=1350px>
+            <tr>
+                <td style="text-align:justify;">
+                    Neural scene renderings have shown great potential in parameterizing complex 3D scenes as a neural network 
+                    by mapping 5D coordinates to RGB values and densities using 1) NeRF or 2) image-based view synthesis. 
+                    
+                    <br><br>
+
+                    While the synthesized views are plausible at unseen views and seemingly satisfactory, 
+                    they often suffer from inaccurate correspondence modeling with ground-truth 3D scenes. 
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <div class="video-container">
+            <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                src="resources/t23d.mp4">
+                <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <table align=center width=1350px>
+            <tr>
+                <td style="text-align:justify;">
+
+                    Moreover, we find that existing image-based neural rendering approaches can easily prioritize 
+                    the simpler task of blending colors using features obtained from contextual views 
+                    over the more complex task of establishing correspondence between sampled contextual features along rays in 3D space.
+                    This occurs because image-based neural rendering operated in 2D-pixel space often lacks a comprehensive understanding of the 3D scene, 
+                    leading to a preference for color blending over accurate correspondence matching of 3D points, 
+                    where depth estimates aligned with camera poses suggest that inferred geometry could be interpreted as correspondence matching points. 
+                    This challenge is compounded when the model relies solely on RGB images, 
+                    as RGB matching can occur even when each projected pixel location in the context views represents different objects, in the absence of geometric priors.
+                
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <div class="video-container">
+            <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                src="resources/t23d.mp4">
+                <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
+    <br><br>
+    <!-- <hr> -->
+	<br><br>
 </body>
 
 </html>

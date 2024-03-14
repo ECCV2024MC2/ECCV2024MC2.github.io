@@ -374,10 +374,8 @@ figure.zoom img {
   }
 
 
-
-
-  .navbar-heading {
-    background-color: #f0f0f0; /* Adjust the color as needed */
+.navbar-heading {
+    background-color: #d6e2f6; /*  #f0f0f0; Adjust the color as needed */
     color: rgb(0, 0, 0); /* Adjust the text color as needed */
     padding: 40px; /* Adjust the padding as needed */
     display: flex;
@@ -385,6 +383,22 @@ figure.zoom img {
     align-items: center;
     text-align: center;
   }
+
+#more-video {
+    width: 100%;
+    height: auto;  /* This will keep the video aspect ratio */
+    margin: 0;
+    border-radius: 0px;
+}
+
+.video-container {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;  /* centering the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
   /* .image-container {
     display: flex;
